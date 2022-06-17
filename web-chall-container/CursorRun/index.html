@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <style>
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #282c34;
+    }
+
+    #evil-button {
+      position: absolute;
+      white-space: nowrap;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="container d-flex justify-content-center">
+    
+    <button id="evil-button" class="btn btn-danger align-middle">Can't Touch Me</button>
+  </div> -->
+
+        <div class="container h-100">
+          <h2 class="text-center text-danger mt-5">Want the flag?</h2>
+          
+          <div class="col-md-12 text-center mt-2">
+            <button class="btn btn-danger noflag">No, im fine</button>
+          </div>
+          <div class="row align-items-center h-100">
+            <div class="row">
+            </div>
+            <button id="evil-button" class="btn btn-success">Yes, i want it</button>
+          </div>
+      </div>
+
+
+
+  
+     <script defer>
+       $(document).on('click', '.noflag', function() {
+        Swal.fire({
+          title: 'Come on hacker',
+          text: 'Are you mad??',
+          imageUrl: 'https://cdn.wallpapersafari.com/34/84/nx4Qhb.jpg',
+          imageWidth: 400,
+          imageHeight: 250,
+          imageAlt: 'Custom image',
+        })
+       });
+        const evilButton = document.getElementById('evil-button')
+        const OFFSET = 100
+
+        evilButton.addEventListener('click', () => {
+            // alert("here: NDd1UktyMzRUMWYyMnt0aGF0X24wdF9zb19oYXJkfQo=");
+            window.close()
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.pageX
+            const y = e.pageY
+            const buttonBox = evilButton.getBoundingClientRect()
+            const horizontalDistanceFrom = distanceFromCenter(buttonBox.x, x, buttonBox.width)
+            const verticalDistanceFrom = distanceFromCenter(buttonBox.y, y, buttonBox.height)
+            const horizontalOffset = buttonBox.width / 2 + OFFSET
+            const verticalOffset = buttonBox.height / 2 + OFFSET
+            
+            if (Math.abs(horizontalDistanceFrom) <= horizontalOffset && Math.abs(verticalDistanceFrom) <= verticalOffset) {
+                setButtonPosition(
+                buttonBox.x + horizontalOffset / horizontalDistanceFrom * 10,
+                buttonBox.y + verticalOffset / verticalDistanceFrom * 10
+                )
+            }
+        })
+
+        function setButtonPosition(left, top) {
+        const windowBox = document.body.getBoundingClientRect()
+        const buttonBox = evilButton.getBoundingClientRect()
+
+        if(distanceFromCenter(left, windowBox.left, buttonBox.width) < 0) {
+            left = windowBox.right - buttonBox.width - OFFSET
+        }
+        if(distanceFromCenter(left, windowBox.right, buttonBox.width) > 0) {
+            left = windowBox.left + OFFSET
+        }
+        if(distanceFromCenter(top, windowBox.top, buttonBox.height) < 0) {
+            top = windowBox.bottom - buttonBox.height - OFFSET
+        }
+        if(distanceFromCenter(top, windowBox.bottom, buttonBox.height) > 0) {
+            top = windowBox.top + OFFSET
+        }
+
+        evilButton.style.left = `${left}px`
+        evilButton.style.top = `${top}px`
+        }
+
+        function distanceFromCenter(boxPosition, mousePosition, boxSize) {
+            return boxPosition - mousePosition + boxSize / 2
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
