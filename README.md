@@ -7,4 +7,4 @@ Step 2: Edit docker file and xinet.d(for pwn challenge) with your chosen port <b
 Step 2: docker build -t . imagename <br /> 
 Step 4: docker run -d -p port:port imagename  <br />
   
-Credit to: [nightfury99](https://github.com/nightfury99/) for web challs.
+Credit to: [nightfury99](https://github.com/nightfury99/) for web challs, [ghost1nwires](https://github.com/ghost1nwires), [ruc3d](https://github.com/ruc3d)   .
