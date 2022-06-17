@@ -6,3 +6,5 @@ Step 1: go to chall directory with dockerfile <br />
 Step 2: Edit docker file and xinet.d(for pwn challenge) with your chosen port <br />
 Step 2: docker build -t . <br /> 
 Step 4: docker run -d -p <port>:<port> <dockername>  <br />
+  
+Credit to: [nightfury99](https://github.com/nightfury99/) for web challs.
