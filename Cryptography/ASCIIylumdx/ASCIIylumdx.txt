@@ -1,0 +1,1 @@
+Have you ever heard of ASCII? It is a 7-bit encoding standard which allows the representation of text using the integers 0-127. Try convert the array to text to get the flag [52, 55, 117, 82, 75, 114, 51, 52, 84, 49, 102, 50, 50, 123, 112, 114, 105, 110, 116, 95, 116, 104, 51, 95, 97, 115 , 99, 105, 105, 125]
